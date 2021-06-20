@@ -5,4 +5,5 @@ data class JokeDTO(
     var id: String,
     var url: String,
     var value: String,
+    var date: String,
 )

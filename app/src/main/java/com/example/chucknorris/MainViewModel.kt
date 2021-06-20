@@ -3,6 +3,8 @@ package com.example.chucknorris
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
 import com.example.chucknorris.jokes.IJokesRepository
 import com.example.chucknorris.jokes.JokeDTO
 import kotlinx.coroutines.CoroutineScope
@@ -22,12 +24,26 @@ class MainViewModel(
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> get() = _isLoading
 
+    val history = Pager(
+        PagingConfig(
+            pageSize = 10,
+            enablePlaceholders = true,
+            maxSize = 100
+        )
+    ) { repository.getAll() }.flow
+
+    init {
+        if (_joke.value == null)
+            getARandomJoke()
+    }
+
     fun getARandomJoke() {
         _isLoading.value = true
         CoroutineScope(Dispatchers.IO).launch {
             try {
                 repository.getARandomJokeFromServer()?.let { joke ->
                     _joke.postValue(joke)
+                    repository.save(joke)
                 }
             } catch (e: Exception) {
                 _message.postValue(e.message)

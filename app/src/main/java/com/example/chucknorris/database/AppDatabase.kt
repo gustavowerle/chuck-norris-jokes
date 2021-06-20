@@ -2,7 +2,7 @@ package com.example.chucknorris.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.example.chucknorris.database.jokes.JokeDAO
+import com.example.chucknorris.database.jokes.IJokeDAO
 import com.example.chucknorris.database.jokes.JokeEntity
 
 @Database(
@@ -13,6 +13,6 @@ import com.example.chucknorris.database.jokes.JokeEntity
 )
 abstract class AppDatabase : RoomDatabase() {
 
-    abstract fun jokeDAO(): JokeDAO
+    abstract fun jokeDAO(): IJokeDAO
 
 }

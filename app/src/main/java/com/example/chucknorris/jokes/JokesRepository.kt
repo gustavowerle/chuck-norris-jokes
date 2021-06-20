@@ -1,15 +1,20 @@
 package com.example.chucknorris.jokes
 
+import androidx.paging.PagingSource
+import com.example.chucknorris.database.jokes.IJokeDAO
+import com.example.chucknorris.database.jokes.toJokeEntity
+
 class JokesRepository(
-    private val api: IJokesREST
+    private val api: IJokesREST,
+    private val dao: IJokeDAO
 ) : IJokesRepository {
 
-    override fun getAll(): List<JokeDTO> {
-        TODO("Not yet implemented")
+    override fun getAll(): PagingSource<Int, JokeDTO> {
+        return dao.getAll()
     }
 
-    override fun create(joke: JokeDTO) {
-        TODO("Not yet implemented")
+    override fun save(joke: JokeDTO) {
+        dao.create(joke.toJokeEntity())
     }
 
     override fun getARandomJokeFromServer(): JokeDTO? {

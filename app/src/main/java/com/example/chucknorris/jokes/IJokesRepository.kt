@@ -1,10 +1,12 @@
 package com.example.chucknorris.jokes
 
+import androidx.paging.PagingSource
+
 interface IJokesRepository {
 
-    fun getAll(): List<JokeDTO>
+    fun getAll(): PagingSource<Int, JokeDTO>
 
-    fun create(joke: JokeDTO)
+    fun save(joke: JokeDTO)
 
     fun getARandomJokeFromServer(): JokeDTO?
 
