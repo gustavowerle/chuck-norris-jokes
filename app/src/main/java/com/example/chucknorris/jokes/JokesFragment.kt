@@ -49,13 +49,10 @@ class JokesFragment : Fragment() {
 
     private fun setIsLoadingObserver() {
         viewModel.isLoading.observe(viewLifecycleOwner, {
-            if (it) {
-                binding.imgJoke.visibility = View.VISIBLE
-                binding.txtJoke.visibility = View.VISIBLE
+            if (it)
                 binding.progressBar.visibility = View.VISIBLE
-            } else {
+            else
                 binding.progressBar.visibility = View.GONE
-            }
         })
     }
 
