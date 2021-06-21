@@ -1,4 +1,4 @@
-package com.example.chucknorris
+package com.example.chucknorris.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

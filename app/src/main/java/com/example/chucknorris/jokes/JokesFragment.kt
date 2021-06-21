@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
-import com.example.chucknorris.MainViewModel
+import com.example.chucknorris.main.MainViewModel
 import com.example.chucknorris.R
 import com.example.chucknorris.databinding.FragmentJokesBinding
 import kotlinx.coroutines.flow.collectLatest
