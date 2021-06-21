@@ -7,7 +7,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-val retrofit = module() {
+val retrofit = module {
     factory { NetworkInterceptor() }
     factory { provideOkHttpClient(get(), get()) }
     factory { provideLoggingInterceptor() }
