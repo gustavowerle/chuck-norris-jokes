@@ -1,13 +1,13 @@
-package com.example.chucknorris.jokes
+package com.example.chucknorris.database.jokes
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import com.example.chucknorris.databinding.ItemViewJokeBinding
 import com.google.gson.Gson
 
-class JokesAdapter : PagingDataAdapter<JokeDTO, JokeViewHolder>(DIFF_CALLBACK) {
+class JokesAdapter : ListAdapter<JokeDTO, JokeViewHolder>(DIFF_CALLBACK) {
 
     companion object {
         private val DIFF_CALLBACK = object :

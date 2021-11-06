@@ -1,4 +1,4 @@
-package com.example.chucknorris.jokes
+package com.example.chucknorris.database.jokes
 
 import androidx.recyclerview.widget.RecyclerView
 import com.example.chucknorris.databinding.ItemViewJokeBinding

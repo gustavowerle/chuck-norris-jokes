@@ -1,4 +1,4 @@
-package com.example.chucknorris.jokes
+package com.example.chucknorris.database.jokes
 
 data class JokeDTO(
     var icon_url: String,

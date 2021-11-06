@@ -1,4 +1,4 @@
-package com.example.chucknorris.jokes
+package com.example.chucknorris.database.jokes
 
 import retrofit2.Call
 import retrofit2.http.GET

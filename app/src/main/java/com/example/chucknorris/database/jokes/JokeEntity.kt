@@ -3,7 +3,6 @@ package com.example.chucknorris.database.jokes
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.example.chucknorris.framework.DateCommons
-import com.example.chucknorris.jokes.JokeDTO
 import java.util.*
 
 @Entity(tableName = "jokes")

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/jokesFragment"
-        android:name="com.example.chucknorris.jokes.JokesFragment"
+        android:name="com.example.chucknorris.database.jokes.JokesFragment"
         android:label="fragment_jokes"
         tools:layout="@layout/fragment_jokes" />
 </navigation>
