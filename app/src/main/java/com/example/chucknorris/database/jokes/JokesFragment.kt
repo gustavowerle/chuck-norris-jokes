@@ -1,4 +1,4 @@
-package com.example.chucknorris.jokes
+package com.example.chucknorris.database.jokes
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,7 +13,6 @@ import com.bumptech.glide.Glide
 import com.example.chucknorris.main.MainViewModel
 import com.example.chucknorris.R
 import com.example.chucknorris.databinding.FragmentJokesBinding
-import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -72,8 +71,8 @@ class JokesFragment : Fragment() {
         binding.rvHistory.adapter = adapter
         binding.rvHistory.layoutManager = LinearLayoutManager(context)
         lifecycleScope.launch {
-            viewModel.history.collectLatest {
-                adapter.submitData(it)
+            viewModel.history.observe(viewLifecycleOwner) {
+                adapter.submitList(it)
                 binding.rvHistory.smoothScrollToPosition(0)
             }
         }

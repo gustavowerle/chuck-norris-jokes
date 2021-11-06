@@ -1,6 +1,5 @@
-package com.example.chucknorris.jokes
+package com.example.chucknorris.database.jokes
 
-import com.example.chucknorris.database.jokes.IJokeDAO
 import org.koin.dsl.module
 import retrofit2.Retrofit
 

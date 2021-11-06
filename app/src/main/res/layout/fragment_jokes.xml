@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            tools:context=".jokes.JokesFragment">
+            tools:context="com.example.chucknorris.database.jokes.JokesFragment">
 
             <TextView
                 android:id="@+id/txtTitle"

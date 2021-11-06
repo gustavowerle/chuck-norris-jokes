@@ -61,7 +61,7 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3'
 
     // Http Stuff
-    // Não foi atualizado o OKHTTP pois está gerando erro na ultima versão
+    // Não foi atualizar o OKHTTP pois está gerando erro na ultima versão
     implementation 'com.squareup.okhttp3:okhttp:4.2.1'
     implementation "com.squareup.okhttp3:logging-interceptor:4.2.1"
     implementation "com.squareup.okhttp3:okhttp-urlconnection:4.2.1"
@@ -94,4 +94,11 @@ dependencies {
     // Glide
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+
+    // Mockk
+    testImplementation "io.mockk:mockk:1.12.0"
+
+    // Test
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    androidTestImplementation "androidx.arch.core:core-testing:2.1.0"
 }
